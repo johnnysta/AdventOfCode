@@ -1,5 +1,7 @@
 package day5;
 
+import util.FileReader;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -63,7 +65,8 @@ public class InputReader implements DataProvider {
 
 
     public InputReader() {
-        List<String> inputLines = readInputFile("resources/Day5/input.txt");
+        List<String> inputLines = FileReader.readInputFile("resources/Day5/input.txt");
+        inputLines.add("");
         seeds = parseSeeds(inputLines);
         parseMap("seed-to-soil map:", inputLines, seedToSoilMap);
         parseMap("soil-to-fertilizer map:", inputLines, soilToFertilizerMap);
@@ -75,6 +78,12 @@ public class InputReader implements DataProvider {
 
     }
 
+    private List<Long> parseSeeds(List<String> inputLines) {
+        String firstLine = inputLines.get(0);
+        String numbersSubString = firstLine.substring(firstLine.indexOf(':') + 1);
+        String[] array = numbersSubString.trim().split("\s+");
+        return Arrays.stream(array).map(Long::parseLong).toList();
+    }
 
     private void parseMap(String mapName, List<String> inputLines, List<MapItem> currentMapping) {
         int i = 0;
@@ -97,29 +106,6 @@ public class InputReader implements DataProvider {
                 Long.parseLong(actualNumStrings[1]),
                 Long.parseLong(actualNumStrings[2]));
         return mapItem;
-    }
-
-    private List<Long> parseSeeds(List<String> inputLines) {
-        String firstLine = inputLines.get(0);
-        String numbersSubString = firstLine.substring(firstLine.indexOf(':') + 1);
-        String[] array = numbersSubString.trim().split("\s+");
-        return Arrays.stream(array).map(Long::parseLong).toList();
-    }
-
-
-    static List<String> readInputFile(String inputPathString) {
-        List<String> inputLines = new ArrayList<>();
-        Path inputPath = Path.of(inputPathString);
-        try (BufferedReader reader = Files.newBufferedReader(inputPath)) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                inputLines.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        inputLines.add("");
-        return inputLines;
     }
 
 }

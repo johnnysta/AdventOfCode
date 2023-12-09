@@ -1,11 +1,8 @@
 package day5;
 
-import com.sun.jdi.LongValue;
-
 import java.util.*;
-import java.util.stream.Collectors;
 
-public class Day5 {
+public class Day5Part1 {
 
     private List<Long> seeds;
     private List<MapItem> seedToSoilMap;

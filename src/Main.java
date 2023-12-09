@@ -1,5 +1,6 @@
-import day4.Day4;
-import day5.Day5;
+import day5.Day5Part1;
+import day5.Day5Part2;
+import day6.Day6;
 
 public class Main {
 
@@ -8,8 +9,14 @@ public class Main {
 //        Day4 day4 = new Day4();
 //        day4.run();
 
-        Day5 day5 = new Day5();
-        System.out.println(day5.run());
+//        Day5Part1 day5Part1 = new Day5Part1();
+//        System.out.println(day5Part1.run());
+
+//        Day5Part2 day5Part2 = new Day5Part2();
+//        System.out.println(day5Part2.run());
+
+        Day6 day6 = new Day6();
+        System.out.println(day6.run());
     }
 
 }
