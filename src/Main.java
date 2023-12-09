@@ -16,7 +16,7 @@ public class Main {
 //        System.out.println(day5Part2.run());
 
         Day6 day6 = new Day6();
-        System.out.println(day6.run());
+        day6.run();
     }
 
 }

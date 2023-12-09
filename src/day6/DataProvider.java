@@ -5,9 +5,9 @@ import java.util.List;
 public interface DataProvider {
 
 
-    List<Integer> provideTimes();
+    List<Long> provideTimes();
 
-    List<Integer> provideDistances();
+    List<Long> provideDistances();
 
 }
 
