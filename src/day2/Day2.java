@@ -14,17 +14,21 @@ public class Day2 {
     private static final int GREEN = 2;
 
     int solution1 = 0;
+    long solution2 = 0;
 
     private List<int[]> inputData = new ArrayList<>();
 
     public void run() {
         InputReader inputReader = new InputReader();
+        //part 1
         inputData = inputReader.provideData();
-        checkInputData();
-        System.out.println(solution1);
+        System.out.println(processInputData_Part1());
+
+        //part 2
+        System.out.println(processInputData_Part2());
     }
 
-    private void checkInputData() {
+    private int  processInputData_Part1() {
         for (int i = 0; i < inputData.size(); i++) {
             int[] lineData = inputData.get(i);
             if ((lineData[RED] <= RED_CUBES) &&
@@ -33,5 +37,13 @@ public class Day2 {
                 solution1 = solution1 + (i + 1);
             }
         }
+        return solution1;
     }
+
+
+    private long processInputData_Part2() {
+        inputData.forEach(lineData -> solution2+= (long) lineData[RED] *lineData[BLUE]*lineData[GREEN]);
+        return solution2;
+    }
+
 }
