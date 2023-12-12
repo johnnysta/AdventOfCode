@@ -28,13 +28,13 @@ public class Day2 {
         System.out.println(processInputData_Part2());
     }
 
-    private int  processInputData_Part1() {
+    private int processInputData_Part1() {
         for (int i = 0; i < inputData.size(); i++) {
             int[] lineData = inputData.get(i);
             if ((lineData[RED] <= RED_CUBES) &&
                     (lineData[BLUE] <= BLUE_CUBES) &&
                     (lineData[GREEN] <= GREEN_CUBES)) {
-                solution1 = solution1 + (i + 1);
+                solution1 += i + 1;
             }
         }
         return solution1;
@@ -42,7 +42,7 @@ public class Day2 {
 
 
     private long processInputData_Part2() {
-        inputData.forEach(lineData -> solution2+= (long) lineData[RED] *lineData[BLUE]*lineData[GREEN]);
+        inputData.forEach(lineData -> solution2 += (long) lineData[RED] * lineData[BLUE] * lineData[GREEN]);
         return solution2;
     }
 
