@@ -119,6 +119,27 @@ public class Day3 {
         if ((pn = isPartNumber(i - 1, j - 1)) != null) {
             neigborPartNumbers.add(pn);
         }
+        if ((pn = isPartNumber(i - 1, j)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i - 1, j + 1)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i, j - 1)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i, j + 1)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i + 1, j - 1)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i + 1, j)) != null) {
+            neigborPartNumbers.add(pn);
+        }
+        if ((pn = isPartNumber(i + 1, j + 1)) != null) {
+            neigborPartNumbers.add(pn);
+        }
         return neigborPartNumbers;
     }
 
