@@ -23,12 +23,11 @@ public class Day3 {
         findPartNumbers();
 
         //Part 1
-        System.out.println(sum);
+        System.out.println("Part 1 solution: " + sum);
 
         //Part2
-
         findGears();
-        System.out.println(sumOfRatios);
+        System.out.println("Part 2 solution: " + sumOfRatios);
 
     }
 
@@ -45,7 +44,7 @@ public class Day3 {
                 extendedTable[i + 1][j + 1] = inputTable[i][j];
             }
         }
-        printExtendedTable();
+//        printExtendedTable();
     }
 
 
