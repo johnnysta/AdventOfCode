@@ -1,4 +1,5 @@
 import day2.Day2;
+import day3.Day3;
 
 public class Main {
 
@@ -7,8 +8,11 @@ public class Main {
 //        Day1 day1 = new Day1();
 //        day1.run();
 
-        Day2 day2 = new Day2();
-        day2.run();
+//        Day2 day2 = new Day2();
+//        day2.run();
+
+        Day3 day3 = new Day3();
+        day3.run();
 
 //        Day4 day4 = new Day4();
 //        day4.run();
